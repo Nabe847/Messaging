@@ -7,14 +7,11 @@ import "google/protobuf/timestamp.proto";
 
 package messaging;
 
-// The greeting service definition.
 service MessageSink {
-  // Sends a greeting
   rpc PostMessage (PostMessageRequest) returns (google.protobuf.Empty);
   rpc Subscribe (google.protobuf.Empty) returns (stream MessageSinkUpdate);
 }
 
-// The request message containing the user's name.
 message PostMessageRequest {
   google.protobuf.Timestamp time = 1;
   string message = 2;
